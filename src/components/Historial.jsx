@@ -8,12 +8,12 @@ export default class Historial extends React.Component{
 
     static getDerivedStateFromProps(props, state){
         
-        if(props.previa  !== ""){
+        if(props.previa  === null){
+            return null;          
+        }else{
             return {
                 historial: [...state.historial, props.previa]
-            }     
-        }else{
-            return null;      
+            }
         }
     }
 
